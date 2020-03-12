@@ -1,0 +1,59 @@
+﻿@page "/students/details/{Id:int}"
+@namespace ContosoUniversity.Client.Pages.Students
+
+<h2>Details</h2>
+
+<ContosoSpinLoader IsLoading="@(Data == null)">
+    <ContentTemplate>
+        <div>
+            <h4>Student</h4>
+            <hr/>
+            <dl class="dl-horizontal">
+                <dt>
+                    <Label For="() => Data.LastName"></Label>
+                </dt>
+                <dd>
+                    <Display For="() => Data.LastName" />
+                </dd>
+                <dt>
+                    <Label For="() => Data.FirstMidName"></Label>
+                </dt>
+                <dd>
+                    <Display For="() => Data.FirstMidName" />
+                </dd>
+                <dt>
+                    <Label For="() => Data.EnrollmentDate"></Label>
+                </dt>
+                <dd>
+                    <Display For="() => Data.EnrollmentDate" />
+                </dd>
+                <dt>
+                    <Label For="() => Data.Enrollments"></Label>
+                </dt>
+                <dd>
+                    <table class="table">
+                        <tr>
+                            <th>Course Title</th>
+                            <th>Grade</th>
+                        </tr>
+                        @foreach (var item in Data.Enrollments)
+                        {
+                            <tr>
+                                <td>
+                                    <Display For="() => item.CourseTitle" />
+                                </td>
+                                <td>
+                                    <Display For="() => item.Grade" />
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a href="students/edit/@Id">Edit</a> |
+            <a href="students">Back to List</a>
+        </div>
+    </ContentTemplate>
+</ContosoSpinLoader>

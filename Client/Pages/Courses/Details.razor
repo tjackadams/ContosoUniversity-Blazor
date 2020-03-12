@@ -1,0 +1,44 @@
+﻿@page "/courses/details/{Id:int}"
+@namespace ContosoUniversity.Client.Pages.Courses
+
+
+<h2>Details</h2>
+
+<ContosoSpinLoader IsLoading="@(Data == null)">
+    <ContentTemplate>
+        <div>
+            <h4>Course</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3">
+                    <Label For="() => Data.Id"></Label>
+                </dt>
+                <dd class="col-sm-9">
+                    <Display For="() => Data.Id" />
+                </dd>
+                <dt class="col-sm-3">
+                    <Label For="() => Data.Title"></Label>
+                </dt>
+                <dd class="col-sm-9">
+                    <Display For="() => Data.Title" />
+                </dd>
+                <dt class="col-sm-3">
+                    <Label For="() => Data.Credits"></Label>
+                </dt>
+                <dd class="col-sm-9">
+                    <Display For="() => Data.Credits" />
+                </dd>
+                <dt class="col-sm-3">
+                    <Label class="text-right" For="() => Data.DepartmentName"></Label>
+                </dt>
+                <dd class="col-sm-9">
+                    <Display For="() => Data.DepartmentName" />
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a href="courses/edit/@Id">Edit</a> |
+            <a href="courses">Back to List</a>
+        </div>
+    </ContentTemplate>
+</ContosoSpinLoader>

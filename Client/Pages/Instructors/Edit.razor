@@ -1,0 +1,63 @@
+﻿@page "/instructors/edit/{Id:int}"
+@namespace ContosoUniversity.Client.Pages.Instructors
+
+<h2>Edit</h2>
+
+<ContosoSpinLoader IsLoading="@(Data == null)">
+    <ContentTemplate>
+        <h4>Instructor</h4>
+        <hr/>
+        <div class="row">
+            <div class="col-md-4">
+
+                <EditForm Model="@Data" OnValidSubmit="HandleValidSubmit">
+                    <FluentValidationValidator />
+                    <ValidationSummary />
+
+                    <ContosoInputText @bind-Value="@Data.Id" hidden />
+
+                    <div class="form-group">
+                        <Label For="() => Data.LastName"></Label>
+                        <InputText class="form-control" @bind-Value="@Data.LastName" />
+                    </div>
+
+                    <div class="form-group">
+                        <Label For="() => Data.FirstMidName"></Label>
+                        <InputText class="form-control" @bind-Value="@Data.FirstMidName" />
+                    </div>
+
+                    <div class="form-group">
+                        <Label For="() => Data.HireDate"></Label>
+                        <InputDate class="form-control" @bind-Value="@Data.HireDate" />
+                    </div>
+
+                    <div class="form-group">
+                        <Label For="() => Data.OfficeAssignmentLocation"></Label>
+                        <InputText class="form-control" @bind-Value="@Data.OfficeAssignmentLocation" />
+                    </div>
+
+                    <div class="form-group">
+                        @{
+                            foreach (var course in Data.AssignedCourses)
+                            {
+                                <div class="form-check form-check-inline">
+                                    <InputCheckbox @bind-Value="course.Assigned" class="form-check-input" />
+                                    <label class="form-check-label" for="@course.CourseId">@course.CourseId : @course.Title</label>
+                                </div>
+                            }
+                        }
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+
+    </ContentTemplate>
+</ContosoSpinLoader>
+
+<div>
+    <a href="instructors">Back to List</a>
+</div>

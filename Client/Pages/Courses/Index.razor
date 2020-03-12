@@ -1,0 +1,41 @@
+﻿@page "/courses"
+@namespace ContosoUniversity.Client.Pages.Courses
+
+
+<h2>Courses</h2>
+
+<p>
+    <a href="courses/create">Create New</a>
+</p>
+
+<ContosoSpinLoader IsLoading="@(Data == null)">
+    <ContentTemplate>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="row">#</th>
+                <th scope="col">Title</th>
+                <th scope="col" class="text-right">Credits</th>
+                <th scope="col">Department</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Data.Courses)
+            {
+                <tr>
+                    <th scope="row">  <Display For="() => item.Id" /></th>
+                    <td> <Display For="() => item.Title" /></td>
+                    <td Class="text-right"><Display For="() => item.Credits" /></td>
+                    <td> <Display For="() => item.DepartmentName" /></td>
+                    <td>
+                        <a href="courses/edit/@item.Id">Edit</a> |
+                        <a href="courses/details/@item.Id">Details</a> |
+                        <a href="courses/delete/@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </ContentTemplate>
+</ContosoSpinLoader>

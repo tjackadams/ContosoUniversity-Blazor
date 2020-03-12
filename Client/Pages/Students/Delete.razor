@@ -1,0 +1,39 @@
+﻿@page "/students/delete/{Id:int}"
+@namespace ContosoUniversity.Client.Pages.Students
+
+<ContosoSpinLoader IsLoading="@(Data == null)">
+    <ContentTemplate>
+
+        <h2>Delete</h2>
+
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <h4>Student</h4>
+            <hr/>
+            <dl class="dl-horizontal">
+                <dt>
+                    <Label For="() => Data.LastName"></Label>
+                </dt>
+                <dd>
+                    <Display For="() => Data.LastName"/>
+                </dd>
+                <dt>
+                    <Label For="() => Data.FirstMidName"></Label>
+                </dt>
+                <dd>
+                    <Display For="() => Data.FirstMidName" />
+                </dd>
+                <dt>
+                    <Label For="() => Data.EnrollmentDate"></Label>
+                </dt>
+                <dd>
+                    <Display For="() => Data.EnrollmentDate" />
+                </dd>
+            </dl>
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger" @onclick="OnClickAsync">Delete</button> |
+                <a href="students">Back to List</a>
+            </div>
+        </div>
+    </ContentTemplate>
+</ContosoSpinLoader>

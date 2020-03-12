@@ -1,0 +1,45 @@
+﻿@page "/students/create"
+@namespace ContosoUniversity.Client.Pages.Students
+
+<h2>Create</h2>
+
+<ContosoSpinLoader IsLoading="@(Data == null)">
+    <ContentTemplate>
+        <h4>Instructor</h4>
+        <hr/>
+        <div class="row">
+            <div class="col-md-4">
+
+                <EditForm Model="@Data" OnValidSubmit="HandleValidSubmit">
+                    <FluentValidationValidator/>
+                    <ValidationSummary/>
+
+                    <div class="form-group">
+                        <Label For="() => Data.LastName"></Label>
+                        <InputText class="form-control" @bind-Value="@Data.LastName"/>
+                    </div>
+
+                    <div class="form-group">
+                        <Label For="() => Data.FirstMidName"></Label>
+                        <InputText class="form-control" @bind-Value="@Data.FirstMidName"/>
+                    </div>
+
+                    <div class="form-group">
+                        <Label For="() => Data.EnrollmentDate"></Label>
+                        <InputDate class="form-control" @bind-Value="@Data.EnrollmentDate"/>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary"/>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+
+    </ContentTemplate>
+</ContosoSpinLoader>
+
+<div>
+    <a href="students">Back to List</a>
+</div>

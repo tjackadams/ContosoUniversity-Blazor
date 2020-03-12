@@ -1,0 +1,116 @@
+﻿@page "/instructors"
+@namespace ContosoUniversity.Client.Pages.Instructors
+
+<h2>Instructors</h2>
+
+<p>
+    <a href="/instructors/create" asp-page-handler="Create">Create New</a>
+</p>
+<ContosoSpinLoader IsLoading="@(Data == null)">
+    <ContentTemplate>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="row">Last Name</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Hire Date</th>
+                <th scope="col">Office</th>
+                <th scope="col">Courses</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Data.Instructors)
+            {
+                var selectedRow = "";
+                if (item.Id == Data.InstructorId)
+                {
+                    selectedRow = "table-success";
+                }
+                <tr class="@selectedRow">
+                    <th scope="row"><Display For="() => item.LastName"/></th>
+                    <td><Display For="() => item.FirstMidName" /></td>
+                    <td><Display For="() => item.HireDate" /></td>
+                    <td><Display For="() => item.OfficeAssignmentLocation" /></td>
+                    <td>
+                        @{
+                            foreach (var course in item.CourseAssignments)
+                            {
+                                @course.CourseId
+                                @: @course.CourseTitle <br/>
+                            }
+                        }
+                    </td>
+                    <td>
+                        <a href="" @onclick:preventDefault @onclick="() => SelectInstructorAsync(item.Id)">Select</a> |
+                        <a href="instructors/edit/@item.Id">Edit</a> |
+                        <a href="instructors/details/@item.Id">Details</a> |
+                        <a href="instructors/delete/@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+
+        @if (Data.Courses.Any())
+        {
+            <h3>Courses Taught by Selected Instructor</h3>
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th>Number</th>
+                    <th>Title</th>
+                    <th>Department</th>
+                </tr>
+
+                @foreach (var item in Data.Courses)
+                {
+                    var selectedRow = "";
+                    if (item.Id == Data.CourseId)
+                    {
+                        selectedRow = "table-success";
+                    }
+                    <tr class="@selectedRow">
+                        <td>
+                            @* ReSharper disable once PossibleInvalidOperationException *@
+                            <a href=""  @onclick:preventDefault @onclick="() => SelectCourseAsync(Data.InstructorId.Value, item.Id)" >Select</a>
+                        </td>
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            @item.Title
+                        </td>
+                        <td>
+                            @item.DepartmentName
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        }
+        @if (Data.Enrollments.Any())
+        {
+            <h3>
+                Students Enrolled in Selected Course
+            </h3>
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Grade</th>
+                </tr>
+                @foreach (var item in Data.Enrollments)
+                {
+                    <tr>
+                        <td>
+                            @item.StudentFullName
+                        </td>
+                        <td>
+                            <display-tag for="@item.Grade"/>
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+    </ContentTemplate>
+</ContosoSpinLoader>

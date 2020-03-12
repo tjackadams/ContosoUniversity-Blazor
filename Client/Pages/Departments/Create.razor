@@ -1,0 +1,54 @@
+﻿@page "/departments/create"
+@namespace ContosoUniversity.Client.Pages.Departments
+
+<h2>Create</h2>
+
+<ContosoSpinLoader IsLoading="@(Administrators == null)">
+    <ContentTemplate>
+        <h4>Department</h4>
+        <hr/>
+        <div class="row">
+            <div class="col-md-4">
+
+                <EditForm Model="@Data" OnValidSubmit="HandleValidSubmit">
+                    <FluentValidationValidator/>
+                    <ValidationSummary/>
+
+                    <div class="form-group">
+                        <Label For="() => Data.Name"></Label>
+                        <InputText class="form-control" @bind-Value="@Data.Name"/>
+                    </div>
+
+                    <div class="form-group">
+                        <Label For="() => Data.Budget"></Label>
+                        <InputNumber class="form-control" @bind-Value="@Data.Budget"/>
+                    </div>
+
+                    <div class="form-group">
+                        <Label For="() => Data.StartDate"></Label>
+                        <InputDate class="form-control" @bind-Value="@Data.StartDate"/>
+                    </div>
+
+                    <div class="form-group">
+                        <Label For="() => Data.Administrator"></Label>
+                        <ContosoInputSelect class="form-control" @bind-Value="@Data.Administrator.Id">
+                            @foreach (var administrator in Administrators)
+                            {
+                                <option value="@administrator.Id">@administrator.FullName</option>
+                            }
+                        </ContosoInputSelect>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+
+    </ContentTemplate>
+</ContosoSpinLoader>
+
+<div>
+    <a href="departments">Back to List</a>
+</div>

@@ -1,0 +1,57 @@
+﻿@page "/departments/edit/{Id:int}"
+@namespace ContosoUniversity.Client.Pages.Departments
+
+<h2>Edit</h2>
+
+<ContosoSpinLoader IsLoading="@(Data == null)">
+    <ContentTemplate>
+        <h4>Course</h4>
+        <hr/>
+        <div class="row">
+            <div class="col-md-4">
+
+                <EditForm Model="@Data" OnValidSubmit="HandleValidSubmit">
+                    <FluentValidationValidator/>
+                    <ValidationSummary/>
+
+                    <ContosoInputText @bind-Value="@Data.Id" hidden/>
+                    <ContosoInputText @bind-Value="@Data.RowVersion" hidden/>
+
+                    <div class="form-group">
+                        <Label For="() => Data.Name"></Label>
+                        <InputText class="form-control" @bind-Value="@Data.Name"/>
+                    </div>
+
+                    <div class="form-group">
+                        <Label For="() => Data.Budget"></Label>
+                        <InputNumber class="form-control" @bind-Value="@Data.Budget"/>
+                    </div>
+
+                    <div class="form-group">
+                        <Label For="() => Data.StartDate"></Label>
+                        <InputDate class="form-control" @bind-Value="@Data.StartDate"/>
+                    </div>
+
+                    <div class="form-group">
+                        <Label For="() => Data.Administrator"></Label>
+                        <ContosoInputSelect class="form-control" @bind-Value="@Data.Administrator.Id">
+                            @foreach (var administrator in Administrators)
+                            {
+                                <option value="@administrator.Id">@administrator.FullName</option>
+                            }
+                        </ContosoInputSelect>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+
+    </ContentTemplate>
+</ContosoSpinLoader>
+
+<div>
+    <a href="instructors">Back to List</a>
+</div>

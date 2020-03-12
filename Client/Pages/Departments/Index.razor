@@ -1,0 +1,48 @@
+﻿@page "/departments"
+@namespace ContosoUniversity.Client.Pages.Departments
+
+<h2>Departments</h2>
+
+<p>
+    <a href="departments/create">Create New</a>
+</p>
+
+<ContosoSpinLoader IsLoading="@(Data == null)">
+    <ContentTemplate>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="row">Name</th>
+                <th scope="col">Budget</th>
+                <th scope="col" class="text-right">Start Date</th>
+                <th scope="col">Administrator</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Data.Departments)
+            {
+                <tr>
+                    <th scope="row">
+                        <Display For="() => item.Name"/>
+                    </th>
+                    <td>
+                        <Display For="() => item.Budget"/>
+                    </td>
+                    <td class="text-right">
+                        <Display For="() => item.StartDate"/>
+                    </td>
+                    <td>
+                        <Display For="() => item.AdministratorFullName"/>
+                    </td>
+                    <td>
+                        <a href="departments/edit/@item.Id">Edit</a> |
+                        <a href="departments/details/@item.Id">Details</a> |
+                        <a href="departments/delete/@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </ContentTemplate>
+</ContosoSpinLoader>

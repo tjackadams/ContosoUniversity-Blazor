@@ -1,0 +1,38 @@
+﻿@page "/instructors/details/{Id:int}"
+@namespace ContosoUniversity.Client.Pages.Instructors
+
+
+<h2>Details</h2>
+
+<ContosoSpinLoader IsLoading="@(Data == null)">
+    <ContentTemplate>
+        <div>
+            <h4>Instructor</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    <Label For="() => Data.LastName"></Label>
+                </dt>
+                <dd>
+                    <Display For="() => Data.LastName" />
+                </dd>
+                <dt>
+                    <Label For="() => Data.FirstMidName"></Label>
+                </dt>
+                <dd>
+                    <Display For="() => Data.FirstMidName" />
+                </dd>
+                <dt>
+                    <Label For="() => Data.HireDate"></Label>
+                </dt>
+                <dd>
+                    <Display For="() => Data.HireDate" />
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a href="instructors/edit/@Id">Edit</a> |
+            <a href="instructors">Back to List</a>
+        </div>
+    </ContentTemplate>
+</ContosoSpinLoader>

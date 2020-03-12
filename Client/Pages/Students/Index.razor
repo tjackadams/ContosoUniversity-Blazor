@@ -1,0 +1,80 @@
+﻿@page "/students"
+@namespace ContosoUniversity.Client.Pages.Students
+
+<h2>Students</h2>
+
+<p>
+    <a href="/students/create">Create New</a>
+</p>
+<ContosoSpinLoader IsLoading="@(Data?.Results == null)">
+    <ContentTemplate>
+        <div class="form-actions no-color">
+                <p>
+                    Find by name: <input type="text" name="SearchString" @bind-value="Data.SearchString"/>
+                    <button type="button" class="btn btn-primary" @onclick="SearchAsync">Search</button>|
+                    <a href="" @onclick:preventDefault @onclick="ResetSearchAsync">Back to Full List</a>
+                </p>
+            </div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    <a href="" @onclick:preventDefault @onclick="SortByNameAsync">Last Name</a>
+                </th>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    <a href="" @onclick:preventDefault @onclick="SortByDateAsync">Enrollment Date</a>
+                </th>
+                <th>Enrollments Count</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Data.Results.Data)
+            {
+                <tr>
+                    <td>
+                        <Display For="() => item.LastName"/>
+                    </td>
+                    <td>
+                        <Display For="() => item.FirstMidName" />
+                    </td>
+                    <td>
+                        <Display For="() => item.EnrollmentDate" />
+                    </td>
+                    <td>
+                        <Display For="() => item.EnrollmentsCount" />
+
+                    </td>
+                    <td>
+                        <a href="/students/edit/@item.Id">Edit</a> |
+                        <a href="/students/details/@item.Id">Details</a> |
+                        <a href="/students/delete/@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+
+        @{
+            var prevDisabled = !Data.Results.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Data.Results.HasNextPage ? "disabled" : "";
+        }
+
+        <a
+            @onclick:preventDefault
+                    @onclick="PreviousPageAsync"
+                    class="btn btn-primary @prevDisabled">
+            Previous
+        </a>
+        <a
+            @onclick:preventDefault
+                    @onclick="NextPageAsync"
+                    class="btn btn-primary @nextDisabled">
+            Next
+        </a>
+    </ContentTemplate>
+</ContosoSpinLoader>
