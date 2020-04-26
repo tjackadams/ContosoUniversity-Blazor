@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using ContosoUniversity.Features.Instructors;
 using Microsoft.AspNetCore.Components;
@@ -20,12 +21,12 @@ namespace ContosoUniversity.Client.Pages.Instructors
 
         protected override async Task OnInitializedAsync()
         {
-            Data = await Client.GetJsonAsync<CreateEdit.Command>($"instructors/{Id}/edit");
+            Data = await Client.GetFromJsonAsync<CreateEdit.Command>($"instructors/{Id}/edit");
         }
 
         protected async Task HandleValidSubmit()
         {
-            await Client.PostJsonAsync("instructors/edit", Data);
+            await Client.PostAsJsonAsync("instructors/edit", Data);
             Navigation.NavigateTo("instructors");
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using ContosoUniversity.Domain.UniversityAggregate;
 using Microsoft.AspNetCore.Components;
@@ -22,15 +23,15 @@ namespace ContosoUniversity.Client.Pages.Courses
 
         public async Task HandleValidSubmit()
         {
-            await Client.PostJsonAsync("courses/edit", Data);
+            await Client.PostAsJsonAsync("courses/edit", Data);
 
             Navigation.NavigateTo("courses");
         }
 
         protected override async Task OnInitializedAsync()
         {
-            Departments = await Client.GetJsonAsync<Department[]>("departments");
-            Data = await Client.GetJsonAsync<Features.Courses.Edit.Command>($"courses/{Id}/edit");
+            Departments = await Client.GetFromJsonAsync<Department[]>("departments");
+            Data = await Client.GetFromJsonAsync<Features.Courses.Edit.Command>($"courses/{Id}/edit");
         }
     }
 }

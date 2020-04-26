@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 
@@ -21,7 +22,7 @@ namespace ContosoUniversity.Client.Pages.Students
 
         protected async Task HandleValidSubmit()
         {
-            await Client.PostJsonAsync("students/create", Data);
+            await Client.PostAsJsonAsync("students/create", Data);
             Navigation.NavigateTo("students");
         }
     }

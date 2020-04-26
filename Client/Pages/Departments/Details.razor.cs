@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Model = ContosoUniversity.Features.Departments.Details.Model;
@@ -18,7 +19,7 @@ namespace ContosoUniversity.Client.Pages.Departments
 
         protected override async Task OnInitializedAsync()
         {
-            Data = await Client.GetJsonAsync<Model>($"departments/{Id}/details");
+            Data = await Client.GetFromJsonAsync<Model>($"departments/{Id}/details");
         }
     }
 }

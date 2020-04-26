@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 
@@ -19,12 +20,12 @@ namespace ContosoUniversity.Client.Pages.Courses
 
         protected override async Task OnInitializedAsync()
         {
-            Data = await Client.GetJsonAsync<Features.Courses.Delete.Command>($"courses/{Id}/delete");
+            Data = await Client.GetFromJsonAsync<Features.Courses.Delete.Command>($"courses/{Id}/delete");
         }
 
         protected async Task OnClickAsync()
         {
-            await Client.PostJsonAsync("courses/delete", Data);
+            await Client.PostAsJsonAsync("courses/delete", Data);
             Navigation.NavigateTo("courses");
         }
     }

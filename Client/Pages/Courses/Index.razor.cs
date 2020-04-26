@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 
@@ -13,7 +14,7 @@ namespace ContosoUniversity.Client.Pages.Courses
 
         protected override async Task OnInitializedAsync()
         {
-            Data = await Client.GetJsonAsync<Features.Courses.Index.Result>("courses/index");
+            Data = await Client.GetFromJsonAsync<Features.Courses.Index.Result>("courses/index");
         }
     }
 }

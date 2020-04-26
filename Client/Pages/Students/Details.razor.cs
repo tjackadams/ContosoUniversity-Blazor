@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
@@ -28,7 +29,7 @@ namespace ContosoUniversity.Client.Pages.Students
             var abc = await Client.GetStringAsync($"students/{Id}/details");
             Logger.LogDebug("abc {abc}", abc);
             Console.WriteLine("result: " + abc);
-            Data = await Client.GetJsonAsync<Model>($"students/{Id}/details");
+            Data = await Client.GetFromJsonAsync<Model>($"students/{Id}/details");
         }
     }
 }

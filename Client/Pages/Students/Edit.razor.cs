@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 
@@ -19,12 +20,12 @@ namespace ContosoUniversity.Client.Pages.Students
 
         protected override async Task OnInitializedAsync()
         {
-            Data = await Client.GetJsonAsync<Features.Students.Edit.Command>($"students/{Id}/edit");
+            Data = await Client.GetFromJsonAsync<Features.Students.Edit.Command>($"students/{Id}/edit");
         }
 
         protected async Task HandleValidSubmit()
         {
-            await Client.PostJsonAsync("students/edit", Data);
+            await Client.PostAsJsonAsync("students/edit", Data);
             Navigation.NavigateTo("students");
         }
     }
