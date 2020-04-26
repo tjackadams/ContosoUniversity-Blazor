@@ -36,6 +36,6 @@ steps:
   displayName: 'dotnet test'
   inputs:
     command: 'test'
-    projects: 'test/**/*.csproj'
-    arguments: '--configuration $(buildConfiguration)'
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
     testRunTitle: 'Integration Tests'
