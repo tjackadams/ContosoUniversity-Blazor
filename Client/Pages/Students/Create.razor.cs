@@ -7,7 +7,7 @@ namespace ContosoUniversity.Client.Pages.Students
 {
     public partial class Create
     {
-        public Features.Students.Create.Command Data { get; set; }
+        public ContosoUniversity.Shared.Features.Students.Create.Command Data { get; set; }
 
         [Inject]
         protected HttpClient Client { get; set; }
@@ -17,7 +17,7 @@ namespace ContosoUniversity.Client.Pages.Students
 
         protected override void OnInitialized()
         {
-            Data = new Features.Students.Create.Command();
+            Data = new ContosoUniversity.Shared.Features.Students.Create.Command();
         }
 
         protected async Task HandleValidSubmit()

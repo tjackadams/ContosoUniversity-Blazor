@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
 using Microsoft.AspNetCore.Components;
 
 namespace ContosoUniversity.Client.Pages.Departments
@@ -16,8 +16,8 @@ namespace ContosoUniversity.Client.Pages.Departments
 
         protected Instructor[] Administrators { get; set; }
 
-        protected Features.Departments.Create.Command Data { get; set; } =
-            new Features.Departments.Create.Command { Administrator = new Instructor() };
+        protected ContosoUniversity.Shared.Features.Departments.Create.Command Data { get; set; } =
+            new ContosoUniversity.Shared.Features.Departments.Create.Command { Administrator = new Instructor() };
 
         protected override async Task OnInitializedAsync()
         {

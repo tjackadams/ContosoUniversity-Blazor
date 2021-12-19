@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
 using Microsoft.AspNetCore.Components;
 
 namespace ContosoUniversity.Client.Pages.Courses
@@ -16,8 +16,8 @@ namespace ContosoUniversity.Client.Pages.Courses
 
         protected Department[] Departments { get; set; }
 
-        protected Features.Courses.Create.Command Data { get; set; } =
-            new Features.Courses.Create.Command { Department = new Department() };
+        protected ContosoUniversity.Shared.Features.Courses.Create.Command Data { get; set; } =
+            new ContosoUniversity.Shared.Features.Courses.Create.Command { Department = new Department() };
 
         protected override async Task OnInitializedAsync()
         {

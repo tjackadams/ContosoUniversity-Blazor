@@ -11,7 +11,7 @@ namespace ContosoUniversity.Client.Pages.Students
         public int Id { get; set; }
 
 
-        public Features.Students.Delete.Command Data { get; set; }
+        public ContosoUniversity.Shared.Features.Students.Delete.Command Data { get; set; }
 
         [Inject]
         protected HttpClient Client { get; set; }
@@ -22,7 +22,7 @@ namespace ContosoUniversity.Client.Pages.Students
 
         protected override async Task OnInitializedAsync()
         {
-            Data = await Client.GetFromJsonAsync<Features.Students.Delete.Command>($"students/{Id}/delete");
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Students.Delete.Command>($"students/{Id}/delete");
         }
 
         protected async Task OnClickAsync()

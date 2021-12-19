@@ -16,11 +16,11 @@ namespace ContosoUniversity.Client.Pages.Departments
         [Inject]
         protected NavigationManager Navigation { get; set; }
 
-        protected Features.Departments.Delete.Command Data { get; set; }
+        protected ContosoUniversity.Shared.Features.Departments.Delete.Command Data { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            Data = await Client.GetFromJsonAsync<Features.Departments.Delete.Command>($"departments/{Id}/delete");
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Departments.Delete.Command>($"departments/{Id}/delete");
         }
 
         protected async Task OnClickAsync()

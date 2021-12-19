@@ -1,6 +1,6 @@
-﻿namespace ContosoUniversity
+﻿namespace ContosoUniversity.Shared
 {
-   public class SharedAssemblyMarker
+    public class SharedAssemblyMarker
     {
     }
 }

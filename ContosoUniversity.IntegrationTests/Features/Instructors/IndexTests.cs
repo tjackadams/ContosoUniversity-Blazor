@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Features.Instructors;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Features.Instructors;
 using Shouldly;
 using Xunit;
-using Index = ContosoUniversity.Features.Instructors.Index;
+using Index = ContosoUniversity.Shared.Features.Instructors.Index;
 
 namespace ContosoUniversity.IntegrationTests.Features.Instructors
 {

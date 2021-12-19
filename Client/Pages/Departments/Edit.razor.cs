@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
 using Microsoft.AspNetCore.Components;
 
 namespace ContosoUniversity.Client.Pages.Departments
@@ -11,7 +11,7 @@ namespace ContosoUniversity.Client.Pages.Departments
         [Parameter]
         public int Id { get; set; }
 
-        public Features.Departments.Edit.Command Data { get; set; }
+        public ContosoUniversity.Shared.Features.Departments.Edit.Command Data { get; set; }
 
         [Inject]
         protected HttpClient Client { get; set; }
@@ -25,7 +25,7 @@ namespace ContosoUniversity.Client.Pages.Departments
         {
             Administrators = await Client.GetFromJsonAsync<Instructor[]>("instructors");
 
-            Data = await Client.GetFromJsonAsync<Features.Departments.Edit.Command>($"departments/{Id}/edit");
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Departments.Edit.Command>($"departments/{Id}/edit");
         }
 
         protected async Task HandleValidSubmit()

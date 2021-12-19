@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoUniversity.Features.Departments;
-using ContosoUniversity.Features.Instructors;
+using ContosoUniversity.Shared.Features.Departments;
+using ContosoUniversity.Shared.Features.Instructors;
 using Microsoft.EntityFrameworkCore;
 using Shouldly;
 using Xunit;

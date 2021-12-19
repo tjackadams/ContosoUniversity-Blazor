@@ -1,14 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Infrastructure;
-using ContosoUniversity.Infrastructure.AutoMapper;
+﻿using AutoMapper;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Infrastructure;
+using ContosoUniversity.Shared.Infrastructure.AutoMapper;
 using MediatR;
 
-namespace ContosoUniversity.Features.Courses
+namespace ContosoUniversity.Shared.Features.Courses
 {
     public class Index
     {

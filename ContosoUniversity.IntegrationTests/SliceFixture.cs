@@ -2,9 +2,9 @@
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.SeedWork;
-using ContosoUniversity.Infrastructure;
 using ContosoUniversity.Server;
+using ContosoUniversity.Shared.Domain.SeedWork;
+using ContosoUniversity.Shared.Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

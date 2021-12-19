@@ -1,14 +1,11 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 using AutoMapper;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Infrastructure;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Infrastructure;
 using FluentValidation;
 using MediatR;
 
-namespace ContosoUniversity.Features.Students
+namespace ContosoUniversity.Shared.Features.Students
 {
     public class Create
     {

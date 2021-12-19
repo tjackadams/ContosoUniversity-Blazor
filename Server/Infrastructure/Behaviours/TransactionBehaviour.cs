@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using ContosoUniversity.Infrastructure;
-using ContosoUniversity.Infrastructure.Extensions;
+using ContosoUniversity.Shared.Infrastructure;
+using ContosoUniversity.Shared.Infrastructure.Extensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;

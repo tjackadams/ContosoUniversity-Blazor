@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace ContosoUniversity.Infrastructure.Collections
+namespace ContosoUniversity.Shared.Infrastructure.Collections
 {
     public class PaginatedList<T>
     {
@@ -12,15 +8,15 @@ namespace ContosoUniversity.Infrastructure.Collections
         {
             PageIndex = pageIndex;
             TotalPages = (int)Math.Ceiling(count / (double)pageSize);
-            HasPreviousPage = (PageIndex > 1);
-            HasNextPage = (PageIndex < TotalPages);
+            HasPreviousPage = PageIndex > 1;
+            HasNextPage = PageIndex < TotalPages;
 
             Data = new List<T>(items);
         }
 
-        public PaginatedList(){}
+        public PaginatedList() { }
 
-        public List<T> Data {get;set;}
+        public List<T> Data { get; set; }
 
         public bool HasPreviousPage { get; set; }
 

@@ -1,18 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Features.Courses.Validation;
-using ContosoUniversity.Infrastructure;
-using ContosoUniversity.Infrastructure.ModelBinding;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Features.Courses.Validation;
+using ContosoUniversity.Shared.Infrastructure;
+using ContosoUniversity.Shared.Infrastructure.ModelBinding;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContosoUniversity.Features.Courses
+namespace ContosoUniversity.Shared.Features.Courses
 {
     public class Edit
     {

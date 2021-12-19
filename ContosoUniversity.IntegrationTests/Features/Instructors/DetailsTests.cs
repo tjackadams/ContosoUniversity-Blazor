@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Features.Instructors;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Features.Instructors;
 using Shouldly;
 using Xunit;
 

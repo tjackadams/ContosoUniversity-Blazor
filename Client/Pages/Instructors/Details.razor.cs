@@ -2,7 +2,7 @@
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
-using Model = ContosoUniversity.Features.Instructors.Details.Model;
+using Model = ContosoUniversity.Shared.Features.Instructors.Details.Model;
 
 namespace ContosoUniversity.Client.Pages.Instructors
 {

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
 using Shouldly;
 using Xunit;
 using static ContosoUniversity.IntegrationTests.SliceFixture;
-using Index = ContosoUniversity.Features.Students.Index;
+using Index = ContosoUniversity.Shared.Features.Students.Index;
 
 namespace ContosoUniversity.IntegrationTests.Features.Students
 {

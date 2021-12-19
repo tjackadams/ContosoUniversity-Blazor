@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Features.Instructors;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Features.Instructors;
 using Microsoft.EntityFrameworkCore;
 using Shouldly;
 using Xunit;
 using static ContosoUniversity.IntegrationTests.SliceFixture;
-using Delete = ContosoUniversity.Features.Courses.Delete;
+using Delete = ContosoUniversity.Shared.Features.Courses.Delete;
 
 
 namespace ContosoUniversity.IntegrationTests.Features.Courses

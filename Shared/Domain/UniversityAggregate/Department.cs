@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ContosoUniversity.Domain.SeedWork;
+using ContosoUniversity.Shared.Domain.SeedWork;
 
-namespace ContosoUniversity.Domain.UniversityAggregate
+namespace ContosoUniversity.Shared.Domain.UniversityAggregate
 {
     public class Department : Entity
     {

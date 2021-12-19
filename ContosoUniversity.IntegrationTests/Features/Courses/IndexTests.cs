@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Features.Instructors;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Features.Instructors;
 using Shouldly;
 using Xunit;
-using Index = ContosoUniversity.Features.Courses.Index;
+using Index = ContosoUniversity.Shared.Features.Courses.Index;
 
 namespace ContosoUniversity.IntegrationTests.Features.Courses
 {

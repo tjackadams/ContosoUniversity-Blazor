@@ -5,11 +5,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AutoMapper;
-using ContosoUniversity.Infrastructure;
 using ContosoUniversity.Server.Infrastructure.Behaviours;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ContosoUniversity.Shared;
+using ContosoUniversity.Shared.Infrastructure;
 
 namespace ContosoUniversity.Server
 {

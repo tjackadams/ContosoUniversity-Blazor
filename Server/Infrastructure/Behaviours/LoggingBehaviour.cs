@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using ContosoUniversity.Infrastructure.Extensions;
+using ContosoUniversity.Shared.Infrastructure.Extensions;
 using MediatR;
 using Microsoft.Extensions.Logging;
 

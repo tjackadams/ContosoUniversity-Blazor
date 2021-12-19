@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace ContosoUniversity.Domain.UniversityAggregate
+namespace ContosoUniversity.Shared.Domain.UniversityAggregate
 {
     public class Student : Person
     {

@@ -4,7 +4,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.WebUtilities;
-using Model = ContosoUniversity.Features.Instructors.Index.Model;
+using Model = ContosoUniversity.Shared.Features.Instructors.Index.Model;
 
 namespace ContosoUniversity.Client.Pages.Instructors
 {

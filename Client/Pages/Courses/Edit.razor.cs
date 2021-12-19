@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
 using Microsoft.AspNetCore.Components;
 
 namespace ContosoUniversity.Client.Pages.Courses
@@ -13,7 +13,7 @@ namespace ContosoUniversity.Client.Pages.Courses
 
         public Department[] Departments { get; set; }
 
-        public Features.Courses.Edit.Command Data { get; set; }
+        public ContosoUniversity.Shared.Features.Courses.Edit.Command Data { get; set; }
 
         [Inject]
         protected NavigationManager Navigation { get; set; }
@@ -31,7 +31,7 @@ namespace ContosoUniversity.Client.Pages.Courses
         protected override async Task OnInitializedAsync()
         {
             Departments = await Client.GetFromJsonAsync<Department[]>("departments");
-            Data = await Client.GetFromJsonAsync<Features.Courses.Edit.Command>($"courses/{Id}/edit");
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Courses.Edit.Command>($"courses/{Id}/edit");
         }
     }
 }

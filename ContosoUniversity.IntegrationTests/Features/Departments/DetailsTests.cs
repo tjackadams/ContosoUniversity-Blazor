@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Features.Instructors;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Features.Instructors;
 using Shouldly;
 using Xunit;
-using Details = ContosoUniversity.Features.Departments.Details;
+using Details = ContosoUniversity.Shared.Features.Departments.Details;
 
 namespace ContosoUniversity.IntegrationTests.Features.Departments
 {

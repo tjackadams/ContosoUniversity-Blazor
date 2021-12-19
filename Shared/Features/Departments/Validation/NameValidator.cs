@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace ContosoUniversity.Features.Departments.Validation
+namespace ContosoUniversity.Shared.Features.Departments.Validation
 {
     public class NameValidator : AbstractValidator<string>
     {

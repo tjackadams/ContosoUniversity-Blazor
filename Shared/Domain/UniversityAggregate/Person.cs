@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ContosoUniversity.Domain.SeedWork;
+using ContosoUniversity.Shared.Domain.SeedWork;
 using DelegateDecompiler;
 
-namespace ContosoUniversity.Domain.UniversityAggregate
+namespace ContosoUniversity.Shared.Domain.UniversityAggregate
 {
     public abstract class Person : Entity
     {

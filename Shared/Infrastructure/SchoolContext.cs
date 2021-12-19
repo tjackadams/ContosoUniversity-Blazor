@@ -1,13 +1,10 @@
-﻿using System;
-using System.Data;
-using System.Threading;
-using System.Threading.Tasks;
-using ContosoUniversity.Domain.SeedWork;
-using ContosoUniversity.Domain.UniversityAggregate;
+﻿using System.Data;
+using ContosoUniversity.Shared.Domain.SeedWork;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace ContosoUniversity.Infrastructure
+namespace ContosoUniversity.Shared.Infrastructure
 {
     public class SchoolContext : DbContext, IUnitOfWork
     {
@@ -15,9 +12,9 @@ namespace ContosoUniversity.Infrastructure
 
         public SchoolContext()
         {
-            
+
         }
-        public SchoolContext(DbContextOptions<SchoolContext> options) 
+        public SchoolContext(DbContextOptions<SchoolContext> options)
             : base(options)
         {
 
@@ -77,7 +74,8 @@ namespace ContosoUniversity.Infrastructure
             {
                 await SaveChangesAsync().ConfigureAwait(false);
 
-                if (_currentTransaction != null) await _currentTransaction.CommitAsync();
+                if (_currentTransaction != null)
+                    await _currentTransaction.CommitAsync();
             }
             catch
             {
@@ -98,7 +96,8 @@ namespace ContosoUniversity.Infrastructure
         {
             try
             {
-                if (_currentTransaction != null) await _currentTransaction.RollbackAsync();
+                if (_currentTransaction != null)
+                    await _currentTransaction.RollbackAsync();
             }
             finally
             {

@@ -1,12 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using ContosoUniversity.Infrastructure.Collections;
+using ContosoUniversity.Shared.Infrastructure.Collections;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContosoUniversity.Infrastructure.AutoMapper
+namespace ContosoUniversity.Shared.Infrastructure.AutoMapper
 {
     public static class MappingExtensions
     {

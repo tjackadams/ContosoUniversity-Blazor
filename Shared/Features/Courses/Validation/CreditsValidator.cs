@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace ContosoUniversity.Features.Courses.Validation
+namespace ContosoUniversity.Shared.Features.Courses.Validation
 {
     public class CreditsValidator : AbstractValidator<int?>
     {

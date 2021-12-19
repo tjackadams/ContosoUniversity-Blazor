@@ -7,7 +7,7 @@ namespace ContosoUniversity.Client.Pages.Departments
 {
     public partial class Index
     {
-        public Features.Departments.Index.Result Data { get; private set; }
+        public ContosoUniversity.Shared.Features.Departments.Index.Result Data { get; private set; }
 
         [Inject]
         protected HttpClient Client { get; set; }
@@ -15,7 +15,7 @@ namespace ContosoUniversity.Client.Pages.Departments
 
         protected override async Task OnInitializedAsync()
         {
-            Data = await Client.GetFromJsonAsync<Features.Departments.Index.Result>("departments/index");
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Departments.Index.Result>("departments/index");
         }
     }
 }

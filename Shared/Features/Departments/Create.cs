@@ -1,17 +1,14 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Threading;
-using System.Threading.Tasks;
 using AutoMapper;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Features.Departments.Validation;
-using ContosoUniversity.Infrastructure;
-using ContosoUniversity.Infrastructure.ModelBinding;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Features.Departments.Validation;
+using ContosoUniversity.Shared.Infrastructure;
+using ContosoUniversity.Shared.Infrastructure.ModelBinding;
 using FluentValidation;
 using MediatR;
 
-namespace ContosoUniversity.Features.Departments
+namespace ContosoUniversity.Shared.Features.Departments
 {
     public class Create
     {

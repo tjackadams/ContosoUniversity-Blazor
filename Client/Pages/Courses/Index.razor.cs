@@ -7,14 +7,14 @@ namespace ContosoUniversity.Client.Pages.Courses
 {
     public partial class Index
     {
-        public Features.Courses.Index.Result Data { get; private set; }
+        public ContosoUniversity.Shared.Features.Courses.Index.Result Data { get; private set; }
 
         [Inject]
         protected HttpClient Client { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            Data = await Client.GetFromJsonAsync<Features.Courses.Index.Result>("courses/index");
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Courses.Index.Result>("courses/index");
         }
     }
 }

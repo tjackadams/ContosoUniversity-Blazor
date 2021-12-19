@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using ContosoUniversity.Features.Instructors;
+﻿using System.ComponentModel.DataAnnotations;
+using ContosoUniversity.Shared.Features.Instructors;
 
-namespace ContosoUniversity.Domain.UniversityAggregate
+namespace ContosoUniversity.Shared.Domain.UniversityAggregate
 {
     public class Instructor : Person
     {

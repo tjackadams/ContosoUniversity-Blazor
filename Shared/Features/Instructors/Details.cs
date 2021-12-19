@@ -1,19 +1,15 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Infrastructure;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Infrastructure;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContosoUniversity.Features.Instructors
+namespace ContosoUniversity.Shared.Features.Instructors
 {
-    public class Details 
+    public class Details
     {
         public class Query : IRequest<Model>
         {

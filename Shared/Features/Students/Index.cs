@@ -1,25 +1,21 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Infrastructure;
-using ContosoUniversity.Infrastructure.AutoMapper;
-using ContosoUniversity.Infrastructure.Collections;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Infrastructure;
+using ContosoUniversity.Shared.Infrastructure.AutoMapper;
+using ContosoUniversity.Shared.Infrastructure.Collections;
 using MediatR;
 
-namespace ContosoUniversity.Features.Students
+namespace ContosoUniversity.Shared.Features.Students
 {
     public class Index
     {
         public class Query : IRequest<Result>
         {
-            public string SortOrder { get; set; }
-            public string CurrentFilter { get; set; }
-            public string SearchString { get; set; }
+            public string? SortOrder { get; set; }
+            public string? CurrentFilter { get; set; }
+            public string? SearchString { get; set; }
             public int? Page { get; set; }
         }
 
@@ -110,7 +106,7 @@ namespace ContosoUniversity.Features.Students
                 }
 
                 const int pageSize = 3;
-                int pageNumber = message.Page ?? 1;
+                var pageNumber = message.Page ?? 1;
                 model.Results = await students
                     .ProjectTo<Model>(_configuration)
                     .PaginatedListAsync(pageNumber, pageSize);

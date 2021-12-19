@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Features.Instructors;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Features.Instructors;
 using Shouldly;
 using Xunit;
 using static ContosoUniversity.IntegrationTests.SliceFixture;
-using Details = ContosoUniversity.Features.Courses.Details;
+using Details = ContosoUniversity.Shared.Features.Courses.Details;
 
 namespace ContosoUniversity.IntegrationTests.Features.Courses
 {

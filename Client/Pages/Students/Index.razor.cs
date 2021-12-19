@@ -9,50 +9,50 @@ namespace ContosoUniversity.Client.Pages.Students
 {
     public partial class Index
     {
-        public Features.Students.Index.Result Data { get; private set; }
+        public ContosoUniversity.Shared.Features.Students.Index.Result Data { get; private set; }
 
         [Inject]
         protected HttpClient Client { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            Data = await Client.GetFromJsonAsync<Features.Students.Index.Result>("students/index");
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Students.Index.Result>(GenerateUrl(string.Empty, string.Empty, string.Empty, null));
         }
 
         protected async Task SearchAsync()
         {
             var url = GenerateUrl(string.Empty, string.Empty, Data.SearchString, null);
-            Data = await Client.GetFromJsonAsync<Features.Students.Index.Result>(url);
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Students.Index.Result>(url);
         }
 
         protected async Task ResetSearchAsync()
         {
             var url = GenerateUrl(string.Empty, string.Empty, string.Empty, null);
-            Data = await Client.GetFromJsonAsync<Features.Students.Index.Result>(url);
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Students.Index.Result>(url);
         }
 
         protected async Task SortByNameAsync()
         {
             var url = GenerateUrl(Data.NameSortParm, Data.CurrentFilter, string.Empty, null);
-            Data = await Client.GetFromJsonAsync<Features.Students.Index.Result>(url);
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Students.Index.Result>(url);
         }
 
         protected async Task SortByDateAsync()
         {
             var url = GenerateUrl(Data.DateSortParm, Data.CurrentFilter, string.Empty, null);
-            Data = await Client.GetFromJsonAsync<Features.Students.Index.Result>(url);
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Students.Index.Result>(url);
         }
 
         protected async Task PreviousPageAsync()
         {
             var url = GenerateUrl(Data.CurrentSort, Data.CurrentFilter, string.Empty, Data.Results.PageIndex - 1);
-            Data = await Client.GetFromJsonAsync<Features.Students.Index.Result>(url);
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Students.Index.Result>(url);
         }
 
         protected async Task NextPageAsync()
         {
             var url = GenerateUrl(Data.CurrentSort, Data.CurrentFilter, string.Empty, Data.Results.PageIndex + 1);
-            Data = await Client.GetFromJsonAsync<Features.Students.Index.Result>(url);
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Students.Index.Result>(url);
         }
 
         private static string GenerateUrl(string sortOrder, string currentFilter, string searchString, int? pageIndex)

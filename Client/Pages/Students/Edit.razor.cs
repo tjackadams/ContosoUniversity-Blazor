@@ -16,11 +16,11 @@ namespace ContosoUniversity.Client.Pages.Students
         [Inject]
         protected NavigationManager Navigation { get; set; }
 
-        protected Features.Students.Edit.Command Data { get; set; }
+        protected ContosoUniversity.Shared.Features.Students.Edit.Command Data { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            Data = await Client.GetFromJsonAsync<Features.Students.Edit.Command>($"students/{Id}/edit");
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Students.Edit.Command>($"students/{Id}/edit");
         }
 
         protected async Task HandleValidSubmit()

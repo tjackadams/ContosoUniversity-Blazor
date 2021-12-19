@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.SeedWork;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Infrastructure;
-using ContosoUniversity.Infrastructure.ModelBinding;
+using ContosoUniversity.Shared.Domain.SeedWork;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Infrastructure;
+using ContosoUniversity.Shared.Infrastructure.ModelBinding;
 using MediatR;
 
 namespace ContosoUniversity.Server.Infrastructure.Behaviours

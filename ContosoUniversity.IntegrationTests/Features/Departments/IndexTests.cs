@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Features.Instructors;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Features.Instructors;
 using Shouldly;
 using Xunit;
-using Index = ContosoUniversity.Features.Departments.Index;
+using Index = ContosoUniversity.Shared.Features.Departments.Index;
 
 namespace ContosoUniversity.IntegrationTests.Features.Departments
 {

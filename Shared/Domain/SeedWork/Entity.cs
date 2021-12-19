@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using MediatR;
+﻿using MediatR;
 
-namespace ContosoUniversity.Domain.SeedWork
+namespace ContosoUniversity.Shared.Domain.SeedWork
 {
     public abstract class Entity
     {
@@ -16,7 +15,7 @@ namespace ContosoUniversity.Domain.SeedWork
         {
             if (Equals(left, null))
             {
-                return (Equals(right, null));
+                return Equals(right, null);
             }
 
             return left.Equals(right);
@@ -68,7 +67,7 @@ namespace ContosoUniversity.Domain.SeedWork
             }
 
 
-            Entity item = (Entity)obj;
+            var item = (Entity)obj;
 
             if (item.IsTransient() || IsTransient())
             {
@@ -84,7 +83,7 @@ namespace ContosoUniversity.Domain.SeedWork
             {
                 if (!_requestedHashCode.HasValue)
                     _requestedHashCode =
-                        this.Id.GetHashCode() ^
+                        Id.GetHashCode() ^
                         31; // XOR for random distribution (http://blogs.msdn.com/b/ericlippert/archive/2011/02/28/guidelines-and-rules-for-gethashcode.aspx)
 
                 return _requestedHashCode.Value;

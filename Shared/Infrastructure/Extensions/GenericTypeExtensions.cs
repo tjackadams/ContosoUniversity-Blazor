@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-namespace ContosoUniversity.Infrastructure.Extensions
+﻿namespace ContosoUniversity.Shared.Infrastructure.Extensions
 {
     public static class GenericTypeExtensions
     {

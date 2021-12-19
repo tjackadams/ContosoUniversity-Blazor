@@ -13,11 +13,11 @@ namespace ContosoUniversity.Client.Pages.Courses
         [Inject]
         protected HttpClient Client { get; set; }
 
-        public Features.Courses.Details.Command Data { get; set; }
+        public ContosoUniversity.Shared.Features.Courses.Details.Command Data { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            Data = await Client.GetFromJsonAsync<Features.Courses.Details.Command>($"courses/{Id}/details");
+            Data = await Client.GetFromJsonAsync<ContosoUniversity.Shared.Features.Courses.Details.Command>($"courses/{Id}/details");
         }
     }
 }

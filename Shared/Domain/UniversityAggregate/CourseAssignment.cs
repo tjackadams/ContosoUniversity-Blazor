@@ -1,4 +1,4 @@
-﻿namespace ContosoUniversity.Domain.UniversityAggregate
+﻿namespace ContosoUniversity.Shared.Domain.UniversityAggregate
 {
     public class CourseAssignment
     {

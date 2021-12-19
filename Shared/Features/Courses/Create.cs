@@ -1,16 +1,14 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
-using ContosoUniversity.Domain.UniversityAggregate;
-using ContosoUniversity.Features.Courses.Validation;
-using ContosoUniversity.Infrastructure;
-using ContosoUniversity.Infrastructure.ModelBinding;
+﻿using AutoMapper;
+using ContosoUniversity.Shared.Domain.UniversityAggregate;
+using ContosoUniversity.Shared.Features.Courses.Validation;
+using ContosoUniversity.Shared.Infrastructure;
+using ContosoUniversity.Shared.Infrastructure.ModelBinding;
 using FluentValidation;
 using MediatR;
 
-namespace ContosoUniversity.Features.Courses
+namespace ContosoUniversity.Shared.Features.Courses
 {
-   public  class Create
+    public class Create
     {
         public class Command : IRequest<int>
         {

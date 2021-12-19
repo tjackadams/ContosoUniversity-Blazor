@@ -4,7 +4,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
-using Model = ContosoUniversity.Features.Students.Details.Model;
+using Model = ContosoUniversity.Shared.Features.Students.Details.Model;
 
 namespace ContosoUniversity.Client.Pages.Students
 {
